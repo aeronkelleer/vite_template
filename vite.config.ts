@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
     base: env.VITE_BASE_PATH,
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, 'src'),
+        '@': path.resolve(import.meta.dirname, 'src'),
       },
     },
     server: {
@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
       preprocessorOptions: {
         scss: {
           additionalData: `@use 'abstracts' as *;`,
-          loadPaths: [path.resolve(__dirname, 'src/styles')],
+          loadPaths: [path.resolve(import.meta.dirname, 'src/styles')],
         },
       },
     },
