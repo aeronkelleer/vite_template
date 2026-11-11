@@ -1,4 +1,4 @@
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 
@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
     base: env.VITE_BASE_PATH,
     resolve: {
       alias: {
-        '@': path.resolve(import.meta.dirname, 'src'),
+        '@': path.resolve(import.meta.dirname, './src'),
       },
     },
     server: {
